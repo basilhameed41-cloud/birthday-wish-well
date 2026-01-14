@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise! 🎂</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Intro Screen -->
+        <div class="screen active" id="intro">
+            <div class="heart-animation">❤️</div>
+            <h1>Hey Ayesha 👋</h1>
+            <p class="subtitle">A very special someone has a birthday today! 🎉</p>
+            <div class="birthday-icon">🎂</div>
+            <p class="message">Let's make your birthday a little more fun with a quick discovery game!</p>
+            <button class="btn-start" onclick="startGame()">
+                Let's Play! <i class="fas fa-play"></i>
+            </button>
+            <div class="hint">Made with 💖 for your special day</div>
+        </div>
+
+        <!-- Game Screen -->
+        <div class="screen" id="game">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <h2 id="question-title">Question <span id="q-num">1</span>/3</h2>
+            
+            <div class="question-box">
+                <p id="question-text">Loading question...</p>
+                
+                <div class="options" id="options-container">
+                    <!-- Options will appear here -->
+                </div>
+                
+                <div class="navigation">
+                    <button class="btn-nav" id="prev-btn" onclick="prevQuestion()">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button class="btn-nav" id="next-btn" onclick="nextQuestion()">
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="score-display">
+                Score: <span id="score">0</span> / 9
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="screen" id="results">
+            <div class="confetti"></div>
+            <h1>🎉 Birthday Results! 🎉</h1>
+            
+            <div class="result-card">
+                <h2>Your Score: <span id="final-score">0</span>/9</h2>
+                <p id="result-message">Calculating your birthday vibes...</p>
+                
+                <div class="gift-box" onclick="openGift()">
+                    <div class="gift-lid">
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-body">
+                        <span class="gift-text">Click to Open Gift!</span>
+                    </div>
+                </div>
+                
+                <div class="gift-message" id="gift-message">
+                    <!-- Gift message appears here -->
+                </div>
+                
+                <div class="final-message" id="final-message">
+                    <!-- Final message appears here -->
+                </div>
+                
+                <button class="btn-restart" onclick="restartGame()">
+                    <i class="fas fa-redo"></i> Play Again
+                </button>
+                
+                <div class="share-box">
+                    <p>Share your birthday joy! 💫</p>
+                    <button class="btn-share" onclick="shareScore()">
+                        <i class="fas fa-share-alt"></i> Share Score
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-hearts"></div>
+    
+    <audio id="bg-music" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="music-control">
+        <button onclick="toggleMusic()" id="music-btn">
+            <i class="fas fa-music"></i> <span id="music-text">Play Music</span>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
